@@ -1,0 +1,26 @@
+<br/>
+<div class="container">
+  <div class="btn-group" role="group">
+    <ng-container *ngFor="let section of sections">
+      <button type="button" class="btn btn-secondary" *ngIf="!section.selected">{{ section.title }}</button>
+      <button type="button" class="btn btn-primary" *ngIf="section.selected">{{ section.title }}</button>
+    </ng-container>
+  </div>
+  <hr/>
+  <ng-container *ngFor="let section of sections">
+    <ng-container *ngIf="section.selected">
+      <div class="form-group" *ngFor="let field of section.fields">
+        <input *ngIf="field.type==='isString'" type="text"
+          [(ngModel)]="field.value" placeholder="text"/>
+        <input *ngIf="field.type==='isBoolean'" type="checkbox"
+          [(ngModel)]="field.value"/>
+        <input *ngIf="field.type==='isDate'" type="text"
+          [(ngModel)]="field.value" placeholder="01.01.2019"/>
+        <input *ngIf="field.type==='isNumber'" type="number"
+          [(ngModel)]="field.value" placeholder="123"/>
+      </div>
+
+      <button class="btn btn-warning" (click)="send(section)">Отправить</button>
+    </ng-container>
+  </ng-container>
+</div>

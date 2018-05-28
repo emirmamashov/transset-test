@@ -1,0 +1,20 @@
+{
+  "name": "namba-adv-database",
+  "version": "0.0.1",
+  "description": "for Namba Media",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "namba",
+    "namba-media",
+    "crm"
+  ],
+  "author": "emir.mamashov@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "^7.1.2",
+    "mongoose": "^5.0.8"
+  }
+}
